@@ -11,6 +11,7 @@ final class AffiliateValueData extends Data
         public readonly int $affiliateId,
         public readonly string $name,
         public readonly float $longitude,
+        public readonly float $distance
     )
     {
     }

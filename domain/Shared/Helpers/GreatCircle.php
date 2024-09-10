@@ -11,7 +11,7 @@ Class GreatCircle {
     const YD = 6967420;
     const FT = 20902260;
 
-    private function validateRadius($unit) {
+    private static function validateRadius($unit) {
         if ( defined('self::'.$unit) ) { return constant('self::'.$unit); }
         else if ( is_numeric($unit) ) { return $unit; }
         else { throw new Exception('Invalid unit or radius: '.$unit); }
@@ -19,7 +19,7 @@ Class GreatCircle {
 
     // Takes two sets of geographic coordinates in decimal degrees and produces distance along the great circle line.
     // Optionally takes a fifth argument with one of the predefined units of measurements, or planet radius in custom units.
-    public static function distance($lat1, $lon1, $lat2, $lon2, $unit = KM) {
+    public static function distance($lat1, $lon1, $lat2, $lon2, $unit = self::KM) {
         $r = self::validateRadius($unit);
         $lat1 = deg2rad($lat1);
         $lon1 = deg2rad($lon1);
