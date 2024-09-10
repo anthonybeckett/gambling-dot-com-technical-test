@@ -35,10 +35,8 @@ class AffiliateRepositoryTest extends TestCase
 
     public function test_it_fails_when_an_incorrect_file_is_passed(): void
     {
-        // Assert exception
-        // Run method
         $this->expectException(FileNotFoundException::class);
 
-        $fileResults = $this->affiliateRepository->getAffiliatesFromFile('i-dont-exist.txt');
+        $this->affiliateRepository->getAffiliatesFromFile('i-dont-exist.txt');
     }
 }
